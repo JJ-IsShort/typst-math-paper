@@ -1,0 +1,1 @@
+/home/arson/Documents/coding_projects/typst-physics-document/interactive/interactive/target/wasm32-unknown-emscripten/debug/interactive.js: /home/arson/Documents/coding_projects/typst-physics-document/interactive/interactive/src/main.rs /home/arson/Documents/coding_projects/typst-physics-document/interactive/interactive/src/objects.rs

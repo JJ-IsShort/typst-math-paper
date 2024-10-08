@@ -1,0 +1,19 @@
+[package]
+name = "interactive"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+raylib = { version = "5.0" }
+#ndarray = { version = "0.16", features = ["blas", "rayon"] }
+rand = "0.8"
+
+[target.wasm32-unknown-emscripten]
+#rustflags = ["-C", "link-args=-s USE_GLFW=3 -s ASSERTIONS=1 --profiling"]
+#rustflags = ["-C", "link-args=-s USE_GLFW=3 -s FORCE_FILESYSTEM=1 -s ALLOW_MEMORY_GROWTH=1 --preload-file /root/raylib-rs/showcase/original@original"]
+rustflags = [
+  "-O3 -sGL_ENABLE_GET_PROC_ADDRESS -sWASM=1 -sWASM_MEM_MAX=512MB -sTOTAL_MEMORY=512MB -sABORTING_MALLOC=0 -sASYNCIFY -sASSERTIONS=1 -sERROR_ON_UNDEFINED_SYMBOLS=0 -sEXPORTED_RUNTIME_METHODS=ccallcwrap -sEXPORT_ES6=1 -sMODULARIZE=1 -sEXPORT_NAME='createModule'",
+  "-C",
+  "link-args=-sUSE_GLFW=3 -sFORCE_FILESYSTEM=1 -sALLOW_MEMORY_GROWTH=1",
+  "link-args=-sMODULARIZE=1",
+]
