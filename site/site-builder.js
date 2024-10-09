@@ -49,9 +49,22 @@ async function load_WASM(display_element, import_path) {
   });
 }
 
+var background = document.createElement("div");
+background.className = "min-h-screen";
+background.style = "background-color: rgb(165 243 252)";
 var card_parent = document.createElement("div");
-document.body.appendChild(card_parent);
-var format = ["page_1", "page_2", "interactive_1"];
+background.appendChild(card_parent);
+card_parent.className =
+  "flex flex-col min-h-screen justify-center items-center";
+document.body.appendChild(background);
+var format = [
+  "page_1",
+  "page_2",
+  "page_3",
+  "interactive_1",
+  "page_4",
+  "page_5",
+];
 (async () => {
   for (
     let format_section = 0;
@@ -61,15 +74,23 @@ var format = ["page_1", "page_2", "interactive_1"];
     const card_id = format[format_section];
     const format_type_index = card_id.split("_", 2);
     var display_card = document.createElement("div");
+    display_card.className = "p-6";
     card_parent.appendChild(display_card);
     if (format_type_index[0] == "page") {
       const display_element = document.createElement("img");
       display_element.setAttribute("src", "./generated/" + card_id + ".svg");
+      display_element.className = "shadow-xl rounded-3xl border-2 border-solid";
+      display_element.style =
+        "background-color: rgb(255 255 255); border-color: rgb(10 10 10);";
       display_card.appendChild(display_element);
     }
     if (format_type_index[0] == "interactive") {
       const display_element = document.createElement("canvas");
-      display_element.setAttribute("class", "emscripten");
+      display_element.setAttribute(
+        "class",
+        "emscripten shadow-xl rounded-md border-2 border-solid",
+      );
+      display_element.style = "border-color: rgb(10 10 10);";
       display_element.setAttribute("id", "canvas");
       display_element.setAttribute("oncontextmenu", "event.preventDefault()");
       display_card.appendChild(display_element);
