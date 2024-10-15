@@ -64,6 +64,10 @@ var format = [
   "interactive_1",
   "page_4",
   "page_5",
+  "page_6",
+  "interactive_2",
+  "page_7",
+  "page_8",
 ];
 (async () => {
   for (

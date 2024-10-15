@@ -5,7 +5,8 @@ edition = "2021"
 
 [dependencies]
 raylib = { version = "5.0" }
-#ndarray = { version = "0.16", features = ["blas", "rayon"] }
+ndarray = "0.15.6"
+ndarray-linalg = { version = "0.16", features = ["intel-mkl-static"] }
 rand = "0.8"
 
 [target.wasm32-unknown-emscripten]
