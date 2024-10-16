@@ -61,11 +61,11 @@ var format = [
   "page_1",
   "page_2",
   "page_3",
-  //"interactive_1",
+  "interactive_1",
   "page_4",
   "page_5",
   "page_6",
-  "interactive_2",
+  //"interactive_2",
   "page_7",
   "page_8",
 ];

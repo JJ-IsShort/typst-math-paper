@@ -81,7 +81,7 @@ Where $a_y$ is the object's position on the Y axis. This then means that we need
   $dv(C,a_y) = -1$
 ]
 This means that when our objects are colliding with the floor, value of the derivative in the Y axis is $-1$.
-In practice, the Jacobian is multiplied by $0.5$ because that gives the constraint bounciness. Below this panel is a simulation with the screen edge constraint implemented to showcase the Jacobian previously calculated in practice and still using the old mouse following constraint.
+In practice, the Jacobian is multiplied by $0.5$ because that gives the constraint bounciness.
 
 #linebreak()
 For the circular constraint, once again, we need to figure out when the constraint needs to be applied. It is only needed when the distance between the mouse position and the object is more than the following distance, which we can call $l$. We sill use a slightly different approach to finding the Jacobian here. This way is more generalized. We will find $dv(C, t)$ and use $dv(C,t) = J v$ where $v$ is a list of all the positions of the objects involved in this constraint. // Add sources to the other paper
